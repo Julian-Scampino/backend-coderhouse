@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        a{
+            text-decoration: none;
+            background-color: rgb(33, 134, 251);
+            color: white;
+        }
+        table, caption, tr, th, td {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+        img {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Productos con Ejs</h1>
+    <% if(productos.length > 0) { %>
+        <table>
+            <th>Titulo</th> 
+            <th>Precio</th> 
+            <th>Imagen</th>
+            <% productos.forEach(element =>{ %>
+            <tr>
+                <td> <%= element.titulo %> </td>
+                <td> <%= element.precio %> </td>
+                <td> <img src="<%= element.url %>" alt=""></td>
+            </tr>
+            <% }) %>
+        </table>
+    <% } else{ %> 
+       <h3>No hay productos</h3>
+    <% }%>
+    
+</body>
+</html>
+
+
+
+

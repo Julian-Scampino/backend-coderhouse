@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        a{
+            text-decoration: none;
+            background-color: rgb(33, 134, 251);
+            color: white;
+        }
+        table, caption, tr, th, td {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+        img {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <span>
+        <h1>Productos con handlebars</h1>
+        <ul>
+            {{#if productos}}
+                <table>
+                    <th>Titulo</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                {{#each productos}}
+                    <tr>
+                        <th>{{this.titulo}}</th>
+                        <th>{{this.precio}}</th>
+                        <th><img src="{{this.url}}" alt=""></th>
+                    </tr>
+                {{/each}}
+                </table>
+            {{else}}
+                <h2>No hay productos</h2>
+            {{/if}}
+        </ul>
+    </span>
+    <a href="http://localhost:8080/index.html">Ir a formulario</a>
+  </body>
+</html>
