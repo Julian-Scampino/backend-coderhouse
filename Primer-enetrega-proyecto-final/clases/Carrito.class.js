@@ -7,11 +7,6 @@ export default class Carrito {
 		this.carritos = [];
 		this.id = 1;
 	}
-
-	/* listar(id) {
-		let prod = this.carritos.find((carr) => carr.id == id);
-		return prod || { error: "carrito no encontrado" };
-	} */
 	async listar(id) {
 		try{
 			const todos = await this.listarAll();
@@ -40,12 +35,6 @@ export default class Carrito {
             console.log(error)
         }
 	}
-
-	/* listarAll() {
-		return this.carritos.length
-			? this.carritos
-			: { error: "no hay carritos cargados" };
-	} */
 	async listarAll() {
 		try{
 			const todos = await fs.promises.readFile("./persistencia/carritos.txt","utf-8")
@@ -57,17 +46,6 @@ export default class Carrito {
             console.log(error)
         }
 	}
-
-	/* async crearCarrito() {
-		try{
-			const carr = { id: this.id++, timeStamp: Date.now(), productos: [] };
-			this.carritos.push(carr);
-			await fs.promises.writeFile("./persistencia/carritos.txt", JSON.stringify(this.carritos, null, 2),"utf-8")
-			return carr;
-		}catch (error){
-            console.log(error)
-        }
-	} */
 	async crearCarrito() {
 		try{
 			let carr
@@ -85,36 +63,30 @@ export default class Carrito {
             console.log(error)
         }
 	}
-
 	async guardarProductoEnCarrito(idProd, idCarrito) {
 		try{
 			const producto = await this.producto.listar(idProd);
-			console.log("el producto traido para el carrito es", producto);
 			this.carritos.forEach((carro) => {
 				carro.id == idCarrito ? carro.productos.push(producto) : null;
 			});
 			await fs.promises.writeFile("./persistencia/carritos.txt", JSON.stringify(this.carritos, null, 2),"utf-8")
-			return this.carritos;
+			return producto;
 		}
 		catch (error){
             console.log(error)
         }
 	}
-	
-	/* borrar(id) {
-		let index = this.carritos.findIndex((carr) => carr.id == id);
-		return this.carritos.splice(index, 1);
-	} */
 	async borrarProd(id, id_prod) {
 		try{
+			let productoBorrado
 			const todos = await this.listarAll()
 			if(todos.length > 0){
 				let carrito = todos.find((carr) => carr.id == id);
 				carrito.productos.forEach((producto, index)=>{
-					producto.id == id_prod ? carrito.productos.splice(index, 1) : null
+					producto.id == id_prod ? productoBorrado = carrito.productos.splice(index, 1) : null
 				})
 				await fs.promises.writeFile("./persistencia/carritos.txt", JSON.stringify(todos, null, 2),"utf-8")
-				return carrito;
+				return productoBorrado;
 			}else{
 				return { error: "no hay carritos cargados" }	
 			}

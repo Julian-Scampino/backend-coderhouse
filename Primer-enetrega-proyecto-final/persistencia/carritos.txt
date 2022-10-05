@@ -1,23 +1,2 @@
 [
-  {
-    "id": 1,
-    "timeStamp": 1664931078010,
-    "productos": [
-      {
-        "nombre": "2",
-        "id": 6,
-        "timeStamp": 1664930821982
-      },
-      {
-        "nombre": "cuatro",
-        "id": 4,
-        "timeStamp": 1664930879901
-      },
-      {
-        "nombre": "3",
-        "id": 7,
-        "timeStamp": 1664930828893
-      }
-    ]
-  }
 ]

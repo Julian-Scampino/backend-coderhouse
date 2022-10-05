@@ -4,15 +4,8 @@ export default class Producto {
 	constructor() {
 		this.id = 0 ;
 	}
-
-	/* listar(id) {
-		let producto = Producto.productos.find((prod) => prod.id == id);
-		return producto || { error: "producto no encontrado" };
-	} */
 	async listar(id) {
 		try{
-			/* const todos = await fs.promises.readFile("./persistencia/productos.txt","utf-8")
-			const todosConvertido = JSON.parse(todos,null,2) */
 			const todos = await this.listarAll();
 			if(todos.length > 0){
 				let producto = todos.find((prod) => prod.id == id);
@@ -25,12 +18,6 @@ export default class Producto {
             console.log(error)
         }
 	}
-
-	/* listarAll() {
-		return Producto.productos.length
-			? Producto.productos
-			: { error: "no hay productos cargados" };
-	} */
 	async listarAll() {
 		try{
 			const todos = await fs.promises.readFile("./persistencia/productos.txt","utf-8")
@@ -45,12 +32,6 @@ export default class Producto {
 
 	async guardar(prod) {
 		try{
-			/* prod.id = ++this.id;
-			prod.timeStamp = Date.now();
-			Producto.productos.push(prod);
-			await fs.promises.writeFile("./persistencia/productos.txt", JSON.stringify(Producto.productos, null, 2),"utf-8")
-			return prod */
-			//Abajo la forma con comprobacion de id 
 			const todos = await this.listarAll();
             if (todos.length <= 0 || todos == undefined) {
                 prod.id = 1;
@@ -67,16 +48,9 @@ export default class Producto {
             console.log(error)
         }
 	}
-
-	/* actualizar(prod, id) {
-		prod.id = Number(id);
-		let index = Producto.productos.findIndex((prod) => prod.id == id);
-		Producto.productos.splice(index, 1, prod);
-	} */
 	async actualizar(prod, id) {
 		try{
 			const todos = await this.listarAll()
-			console.log("productos traidos para actualizar", todos);
 			if(todos.length > 0){
 				prod.id = Number(id);
 				prod.timeStamp = Date.now()
@@ -92,11 +66,6 @@ export default class Producto {
             console.log(error)
         }
 	}
-
-	/* borrar(id) {
-		let index = Producto.productos.findIndex((prod) => prod.id == id);
-		return Producto.productos.splice(index, 1);
-	} */
 	async borrar(id) {
 		try{
 			const todos = await this.listarAll()

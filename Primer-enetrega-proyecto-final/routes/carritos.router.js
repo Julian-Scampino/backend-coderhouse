@@ -15,8 +15,8 @@ router.delete("/:id/productos/:id_prod", async (req, res) => {
 	res.send(productoBorrado);
 });
 router.delete("/:id", async (req, res) => {
-	const productoBorrado = await carrito.borrarCarr(req.params.id);
-	res.send(productoBorrado);
+	const carritoBorrado = await carrito.borrarCarr(req.params.id);
+	res.send(carritoBorrado);
 });
 
 router.get("/:id/productos", async (req, res) => {
@@ -25,10 +25,10 @@ router.get("/:id/productos", async (req, res) => {
 });
 
 router.post("/:id/productos/:idPrd", async (req, res) => {
-	const respuesta = await carrito.guardarProductoEnCarrito(
+	const producto = await carrito.guardarProductoEnCarrito(
 		req.params.idPrd,
 		req.params.id
 	);
-	res.send(respuesta);
+	res.send(producto);
 });
 export default router;

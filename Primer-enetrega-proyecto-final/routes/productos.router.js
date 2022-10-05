@@ -9,12 +9,11 @@ function validarAdmin(req, res, next) {
 	if (req.query.admin) {
 		next();
 	} else {
-		res.send("usted no tiene acceso");
+		res.send("Error usted no tiene acceso");
 	}
 }
 
 router.post("/", validarAdmin,async (req, res) => {
-	console.log(req.body);
 	const productoCreado = await producto.guardar(req.body);
 	res.send(productoCreado);
 });
