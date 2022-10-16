@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mi Aplicación con Sockets</title>
+      <script src="/socket.io/socket.io.js"></script>
+      <style>
+        body{
+          background-color: #e9ecef;
+        }
+        table, caption, tr, th, td {
+              border: 1px solid #000000;
+              border-collapse: collapse;
+          }
+      </style>
+  </head>
+  <body>
+    <h2>Ingrese un producto</h2>
+    <form id="formProductos">
+      Titulo: 
+      <input type="text" name="titulo" required/> 
+      Precio:
+      <input type="text" name="precio" required/>
+      Url de imagen:
+      <input type="text" name="url" required/>
+      <button type="submit">Enviar</button>
+    </form>
+      <table>
+          <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>Precio</th>
+              <th>Imagen</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+      </table>
+    <h2>Chat</h2>
+    <form id="formChat">
+      Email: 
+      <input type="email" name="email" required/> 
+      Mensaje:
+      <input type="text" name="mensaje" required/>
+      <button type="submit">Enviar</button>
+    </form>
+    <p></p>
+    <script src="./index.js"></script>
+  </body>
+</html>
