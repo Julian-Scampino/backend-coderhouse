@@ -1,0 +1,20 @@
+use ecommers
+db.productos.insertMany([{title:"regla",price:101,url:"ewfqewfqwef"},{title:"birome",price:1340,url:"qergfwqerg"},{title:"lapiz",price:540,url:"qergqergqerg"},{title:"mochila",price:3200,url:"qergqerg"},{title:"borrador",price:4750,url:"qergqer"},{title:"cuaderno",price:2844,url:"qrthqrgt"},{title:"escuadra",price:3934,url:"qrthqrg"},{title:"resaltador",price:2749,url:"qrgqrth"},{title:"hoja",price:3850,url:"wthwrgh"},{title:"tinta",price:1494,url:"wrthwrgwrg"}])
+
+db.mensajes.insertMany([{Email:"qerfqer@qerwfqerg",Fecha:"28/9/2022, 14:49:01",Mensaje:"asdfaerg"},{Email:"aqerfqer@qerfqerf",Fecha:"29/9/2022, 13:29:21",Mensaje:"wergwrg"},{Email:"yeneh@etwyhbwth",Fecha:"30/9/2022, 20:39:43",Mensaje:"wrthwrg"},{Email:"rgwrthrtg@wtgwrgtwrth",Fecha:"1/10/2022, 03:22:39",Mensaje:"wtrhwrgrg"},{Email:"lkvreerf@umkjkjn",Fecha:"2/10/2022, 05:34:45",Mensaje:"qergf"},{Email:"wergwerg@qerfeqrg",Fecha:"3/10/2022, 12:27:11",Mensaje:"qerthqerf"},{Email:"mnmvffbl@poklij",Fecha:"4/10/2022, 17:58:23",Mensaje:"ljqefv"},{Email:"lrjherg@erfjkef",Fecha:"5/10/2022, 02:27:40",Mensaje:"qerlkjnhkj"},{Email:"adergrg@oerfkrg",Fecha:"6/10/2022, 18:34:32",Mensaje:"xcvfnlkjbn"},{Email:"k\xf1jenfve@\xf1pjeverfg",Fecha:"7/10/2022, 09:59:25",Mensaje:"hgljklm"}])
+
+db.productos.find()
+db.mensajes.find()
+db.productos.estimatedDocumentCount()
+db.mensajes.estimatedDocumentCount()
+db.productos.insertOne({title: "tijera", price: 2842, url: "erilkjierg"})
+db.productos.find({price: {$lt: 1000}})
+db.productos.find({price: {$gt: 1000, $lt: 3000}})
+db.productos.find({price: {$gt: 3000}})
+db.productos.find({},{title:1}).sort({price: 1}).skip(2).limit(1)
+db.productos.updateMany({}, {$set: {stock: 100}})
+db.productos.updateMany({price: {$gt: 4000}}, {$set: {stock: 0}})
+db.productos.deleteMany({price: {$lt: 1000}})
+
+// No funciona el rol, igual puede escribir.
+db.createUser({user: "pepe",pwd: "asd456",roles: [{ role: "read", db: "ecommers" }]})
