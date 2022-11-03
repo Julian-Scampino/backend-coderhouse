@@ -1,23 +1,9 @@
 import express from "express";
+import Carrito from "../DAOs/ExportCarrito.js"
 import * as dotenv from 'dotenv'
 dotenv.config()
-if(process.env.METODO == "mongodb"){
-	import ("../DAOs/Carritos/Carrito.DaoMongodb.js")
-	.then(({default: Carrito}) =>{
-	carrito = new Carrito
-	})
-}else if(process.env.METODO == "archivo"){
-	import ("../DAOs/Carritos/Carrito.DaoArchivo.js")
-	.then(({default: Carrito}) =>{
-		carrito = new Carrito
-	})
-}else if(process.env.METODO == "memoria"){
-	import ("../DAOs/Carritos/Carrito.DaoMemoria.js")
-	.then(({default: Carrito}) =>{
-		carrito = new Carrito
-	})
-}
-let carrito
+
+let carrito = Carrito(process.env.METODO)
 
 const router = express.Router();
 

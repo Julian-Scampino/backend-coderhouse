@@ -1,23 +1,9 @@
 import express from "express";
+import Producto from "../DAOs/ExportProducto.js"
 import * as dotenv from 'dotenv'
 dotenv.config()
-if(process.env.METODO == "mongodb"){
-	import ("../DAOs/Productos/Producto.DaoMongoDb.js")
-	.then(({default: Producto}) =>{
-	producto = new Producto
-	})
-}else if(process.env.METODO == "archivo"){
-	import ("../DAOs/Productos/Producto.DaoArchivo.js")
-	.then(({default: Producto}) =>{
-		producto = new Producto
-	})
-}else if(process.env.METODO == "memoria"){
-	import ("../DAOs/Productos/Producto.DaoMemoria.js")
-	.then(({default: Producto}) =>{
-		producto = new Producto
-	})
-}
-let producto
+
+let producto = Producto(process.env.METODO)
 
 const router = express.Router();
 

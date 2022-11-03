@@ -28,7 +28,7 @@ export default class Carrito {
 			if(carrito.productos.length > 0){
 				return carrito.productos
 			}else{
-				return { error: "no hay carritos cargados" }	
+				return { error: "no hay productos en el carrito" }	
 			}
         }
         catch (error){
