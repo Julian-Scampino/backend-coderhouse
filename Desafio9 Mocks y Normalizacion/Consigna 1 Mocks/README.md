@@ -25,7 +25,7 @@ El link de acceso es de http://localhost:8080/api/productos-test/
 
 ### `npm install @faker-js/faker --save-dev`
 
-### Instalando Faker
+### Instalando Ejs
 
 ### `npm install ejs`
 
