@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "name": "consigna-1-mocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "faker": "^6.6.6",
+    "nodemon": "^2.0.20"
+  }
+}
