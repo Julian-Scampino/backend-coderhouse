@@ -49,7 +49,6 @@ io.on("connection", (socket) => {
             data.id = id + 1;	
 		}
 		mensajes.push(data);
-		console.log(mensajes);
 		let normalizado = normalizar(mensajes)
 		await escribir(normalizado)
 		let lecturaDeMensajes = await leer()
@@ -57,5 +56,5 @@ io.on("connection", (socket) => {
 	});
 });
 const connectedServer = httpServer.listen(3001, () => {
-	console.log("servidor levantado");
+	console.log("servidor levantado en puerto 3001");
 });

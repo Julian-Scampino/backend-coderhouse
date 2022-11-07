@@ -4,7 +4,7 @@ const input = document.querySelector("input");
 
 document.getElementById("formChat").addEventListener("submit",(e) =>{
 	e.preventDefault()
-	let id = document.querySelector("#formChat > #id").value
+	let email = document.querySelector("#formChat > #email").value
 	let nombre = document.querySelector("#formChat > #nombre").value
 	let apellido = document.querySelector("#formChat > #apellido").value
 	let edad = document.querySelector("#formChat > #edad").value
@@ -15,7 +15,7 @@ document.getElementById("formChat").addEventListener("submit",(e) =>{
 
 	let objetoMensaje = {
 			author: {
-				id: id,
+				email: email,
 				nombre: nombre, 
 				apellido: apellido, 
 				edad: edad, 
@@ -30,7 +30,7 @@ document.getElementById("formChat").addEventListener("submit",(e) =>{
 socket.on("mensajes", (data) => {
 	if(data != undefined && Object.keys(data).length > 0){
 		//--------------- Esquema de normalizr y desnormalizacion
-		const schemaAuthor = new normalizr.schema.Entity("authors",{},{idAttribute: 'id'})
+		const schemaAuthor = new normalizr.schema.Entity("authors",{},{idAttribute: 'email'})
 		const schemaArticulos = new normalizr.schema.Entity("articulos",{
 			author: schemaAuthor
 		})
@@ -41,7 +41,7 @@ socket.on("mensajes", (data) => {
 		//--------------- Imprimiendo mensajes ya desnormalizados
 		const mensajes = desnormalizado.mensajes
 		.map(
-			(msj) =>`Email: <strong style="color:blue; font-weight: bold">${msj.author.id}</strong> 
+			(msj) =>`Email: <strong style="color:blue; font-weight: bold">${msj.author.email}</strong> 
 			-> Fecha: <strong style="color: brown">${msj.fecha}</strong>
 			-> Mensaje: <strong style="color: green; font-style: italic">${msj.text}</strong>
 			`
@@ -52,7 +52,6 @@ socket.on("mensajes", (data) => {
 		//--------------- Porcentaje de compresion 
 		const longitudNormaliz = JSON.stringify(data).length
 		const longitudDesnormaliz = JSON.stringify(desnormalizado).length
-		console.log(longitudNormaliz, longitudDesnormaliz);
 		let porcentaje = (longitudNormaliz*100)/longitudDesnormaliz
 		document.querySelector("#mensajeCompresionNormalizacion").innerHTML = `Porcentaje de compresion = %${porcentaje}`
 		
