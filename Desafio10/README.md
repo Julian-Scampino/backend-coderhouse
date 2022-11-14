@@ -1,6 +1,6 @@
 # Información del proyecto
 
-Esta es el desafio de Normalizacion con Normalizr de Coder House para el curso de Back-End. Alumno: Julián Scampino.  
+Esta es el desafio de "log-in por formulario" clases 23 y 24 de sobre "cookies, session y storage" de Coder House para el curso de Back-End. Alumno: Julián Scampino.  
 El link para verlo es http://localhost:3001/
 
 ## Instalando módulos
