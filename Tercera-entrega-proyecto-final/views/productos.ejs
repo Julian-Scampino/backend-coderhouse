@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        body{
+          background-color: #e9ecef;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(255, 85, 85);
+        }
+        header ul{
+            display: flex
+        }
+        header li{
+            list-style: none;
+            margin-right: 30px;
+        }
+        header a{
+            color: black;
+            font-size: 20px;
+        } 
+      </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">HOME</a>
+          </li>
+          <li>
+            <a href="/logout">LOGOUT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Productos</h1>
+    <% if(productos.length > 0) { %>
+        <table>
+            <th>ID</th> 
+            <th>Titulo</th> 
+            <th>Precio</th> 
+            <th>Comprar</th>
+            <% productos.forEach(element =>{ %>
+            <tr>
+                <td> <%= element.id %> </td>
+                <td> <%= element.titulo %> </td>
+                <td> <%= element.precio %> </td>
+                <td> <button class="botonAgregarProducto" id="<%= element.id %>">Agregar al carrito</button></td>
+            </tr>
+            <% }) %>
+        </table>
+    <% } else{ %> 
+       <h3>No hay productos</h3>
+    <% }%>
+    <h2>Productos del carrito</h2>
+    <% if(carrito.length > 0) { %>
+      <table>
+          <th>ID</th> 
+          <th>Titulo</th> 
+          <th>Precio</th> 
+          <th>Comprar</th>
+          <% carrito.forEach(element =>{ %>
+          <tr>
+              <td> <%= element.id %> </td>
+              <td> <%= element.titulo %> </td>
+              <td> <%= element.precio %> </td>
+          </tr>
+          <% }) %>
+      </table>
+  <% } else{ %> 
+     <h3>No hay productos en carrito</h3>
+  <% }%>
+    <a href="/resumen"><button>Finalizar Compra</button></a>
+    <script src="productos.js"></script>
+</body>
+</html>
