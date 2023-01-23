@@ -1,0 +1,56 @@
+[
+  {
+    "username": "probandoLaRedireccion2",
+    "password": "$2b$10$PSnyMf/Uh719HTOgmIfLfuK40JKSdJBM/kWSphqTJWinF1iZ.Yq9y",
+    "email": "probandoLaRedireccion2@probandoLaRedireccion2",
+    "_id": 8
+  },
+  {
+    "username": "probandoLaRedireccion1",
+    "password": "$2b$10$hlmZ08GhE5UqTMH84dd0eeo1AvBenavRYsUpG3IJxMlisYqOsrYXq",
+    "email": "probandoLaRedireccion1@probandoLaRedireccion1",
+    "_id": 7
+  },
+  {
+    "username": "probandoArchivo6",
+    "password": "$2b$10$tLllt00wA74q1cyyI8B8t.vPS9EzxLomnB0PZeSYfun5aRDsP6Pqi",
+    "email": "probandoArchivo6@probandoArchivo6",
+    "_id": 6
+  },
+  {
+    "username": "probandoArchivo5",
+    "password": "$2b$10$xEnOreg.4HWpr1IJyCoafey6gs.Ij0z9mgveDLvQTGQKW3f0KCTuO",
+    "email": "probandoArchivo5@probandoArchivo5",
+    "_id": 5
+  },
+  {
+    "username": "qerfhjujiuhfelqerhfiqoeurfh",
+    "password": "$2b$10$v2qTTy00HXNFPFrWhSaJVulkZ3j7VgiNPNLxuqPkOF88cUxi8ZAeG",
+    "email": "erfpiquerfh@qperufhqe",
+    "_id": 4
+  },
+  {
+    "username": "probandoArchivo3",
+    "password": "$2b$10$pbIHB3N62mgiGiuEQ0Uu6eLMTTSTadjEgv6TqOaLFZMBOmlXSijqy",
+    "email": "probandoArchivo3@probandoArchivo3",
+    "_id": 3
+  },
+  {
+    "username": "probandoArchivo2",
+    "password": "$2b$10$qbqcDPfO9MeGGP.liJXbCO8Pn/5BuiIQTksG9HKXCDGPRIyz12naK",
+    "email": "probandoArchivo2@probandoArchivo2",
+    "_id": 2
+  },
+  {
+    "username": "probandoArchivo1",
+    "password": "$2b$10$Dt9byswQYDiu.taT1qRqFe.cn5iowSvGJNzDhxrJtaygeTAKyTa9e",
+    "email": "probandoArchivo1@probandoArchivo1",
+    "_id": 1
+  },
+  {
+    "username": "probandoLaRedireccion4",
+    "password": "$2b$10$q7FaRkStukQTNNn18Slf8.PKHD1Xip7Zyj2JMj1EFq2ExU826CLYa",
+    "email": "probandoLaRedireccion4@probandoLaRedireccion4",
+    "_id": 9
+  }
+]

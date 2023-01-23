@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "authors": {
+      "sdf@dwef": {
+        "email": "sdf@dwef",
+        "nombre": "wef",
+        "apellido": "wef",
+        "edad": "wef",
+        "alias": "wef",
+        "avatar": "wef"
+      }
+    },
+    "articulos": {
+      "1": {
+        "author": "sdf@dwef",
+        "text": "wef",
+        "fecha": "2022-11-14T00:54:01.597Z",
+        "id": 1
+      },
+      "2": {
+        "author": "sdf@dwef",
+        "text": "wef",
+        "fecha": "2022-11-14T00:54:02.636Z",
+        "id": 2
+      },
+      "3": {
+        "author": "sdf@dwef",
+        "text": "wef",
+        "fecha": "2022-11-14T00:54:03.172Z",
+        "id": 3
+      },
+      "4": {
+        "author": "sdf@dwef",
+        "text": "wef",
+        "fecha": "2022-11-14T00:54:20.156Z",
+        "id": 4
+      },
+      "5": {
+        "author": "sdf@dwef",
+        "text": "wef",
+        "fecha": "2022-11-14T00:54:20.316Z",
+        "id": 5
+      },
+      "6": {
+        "author": "sdf@dwef",
+        "text": "wef",
+        "fecha": "2022-11-14T00:54:20.492Z",
+        "id": 6
+      }
+    },
+    "post": {
+      "mensajes": {
+        "id": "mensajes",
+        "mensajes": [
+          5,
+          4,
+          3,
+          2,
+          1,
+          6
+        ]
+      }
+    }
+  },
+  "result": "mensajes"
+}
