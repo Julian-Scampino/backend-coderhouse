@@ -1,0 +1,14 @@
+[
+  {
+    "titulo": "cosa1",
+    "precio": 123,
+    "id": 1,
+    "timeStamp": 1675795665987
+  },
+  {
+    "titulo": "cosa2",
+    "precio": 123,
+    "id": 2,
+    "timeStamp": 1675795665987
+  }
+]

@@ -1,0 +1,39 @@
+mutation {
+  guardar(datos: {titulo: "cosa3", precio: 123}) {
+    id
+    titulo
+    precio
+  }
+}
+---------------------------
+{
+  listarAll {
+    titulo
+    precio
+  }
+}
+-------------------------
+{
+  listar(id: 3) {
+    titulo
+    precio
+  }
+}
+------------------------------
+mutation {
+  actualizar(id: 3, datos: {titulo: "actualizando", precio: 123}) {
+    titulo
+  }
+}
+--------------------------------
+mutation {
+  borrar(id: 3) {
+    titulo
+  }
+}
+-----------------
+mutation {
+  borrarTodo {
+    titulo
+  }
+}
