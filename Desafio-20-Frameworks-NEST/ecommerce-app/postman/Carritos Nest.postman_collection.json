@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "18037faa-4ce1-49ed-8ce9-9ccecd13e08b",
+		"name": "Carritos Nest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23334532"
+	},
+	"item": [
+		{
+			"name": "POST: '/' - Crea un carrito y devuelve su id.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/carrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE: '/:id' - Vacía un carrito y lo elimina.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/carrito/63ec08641a332d6af06d8dc9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"carrito",
+						"63ec08641a332d6af06d8dc9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/carrito/63ec1d7a7c44e48d24830f9b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"carrito",
+						"63ec1d7a7c44e48d24830f9b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST: '/:id/productos/:idPrd' - Para incorporar productos al carrito por su id de producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/carrito/63ec1d7a7c44e48d24830f9b/product/63ec04e5f20c5fb211c13c46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"carrito",
+						"63ec1d7a7c44e48d24830f9b",
+						"product",
+						"63ec04e5f20c5fb211c13c46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/carrito/63ec1d7a7c44e48d24830f9b/product/63ec04e5f20c5fb211c13c46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"carrito",
+						"63ec1d7a7c44e48d24830f9b",
+						"product",
+						"63ec04e5f20c5fb211c13c46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get TODOS CARRITOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/carrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

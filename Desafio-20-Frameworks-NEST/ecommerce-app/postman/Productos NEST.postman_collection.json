@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "d7411bd8-fa79-475d-9d30-89385163a1e0",
+		"name": "Productos NEST",
+		"description": "This collection walks you through the first few steps in making requests to API endpoints.\n\nClick __Fork__ to import the collection into your own workspace.\n\n* Once you have the collection in Postman you will see it in __Collections__ on the left of the app.\n* Click __Learn by API__ to open the collection.\n* Click `GET` __Begin Learning__ to open the request.\n* Click __Send__.\n* The response __Body__ will walk you through the steps!\n\n![learn-by-web-rendered](https://user-images.githubusercontent.com/6666370/105840879-a8355780-5fcb-11eb-80bb-4a262f4bdd7d.jpg)\n\n* Make sure you click **Visualize** to see the instructions.\n\n_The API is hosted on [Glitch](https://glitch.com/~learn-by-api)._",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23334532"
+	},
+	"item": [
+		{
+			"name": "GET TODOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST meter 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"probando3\",\r\n  \"price\": 123,\r\n  \"stock\": 123,\r\n  \"thumbnail\": \"asd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product/63ec1ea740ec2ca37e2fd880",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"63ec1ea740ec2ca37e2fd880"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /:ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product/63ec04b2f20c5fb211c13c44",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"63ec04b2f20c5fb211c13c44"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var template = `",
+					"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js\"></script>",
+					"    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css\">",
+					"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js\"></script>",
+					"    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/googlecode.min.css\">",
+					"    <script type=\"text/javascript\">",
+					"        function getContent(orig){",
+					"            var converter = new showdown.Converter(), text = orig, html = converter.makeHtml(text);",
+					"            return html;",
+					"        }",
+					"    </script>",
+					"    <h2>{{response.title}}</h2>",
+					"    <ul>",
+					"    <div id=\"notes\"></div>",
+					"    {{#if response.next}}<h3>Next</h3>",
+					"    <div id=\"next\"></div>",
+					"    {{/if}}",
+					"    {{#if response.error}}",
+					"    <h2 style=\"color:red\">Error</h2>",
+					"    <p><strong>{{response.error}}</strong></p>",
+					"    {{/if}}",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{json_info}}\".length>0)",
+					"            document.write(\"<pre>{{json_info}}</pre>\");",
+					"    </script>",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{response.rip}}\".length>0)",
+					"            document.write(getContent(\"{{response.rip}}\"));",
+					"    </script>",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{response.pic}}\".length>0)",
+					"            document.write(\"<img src='{{response.pic}}' alt='postman steps' style='max-width:600px'/>\");",
+					"    </script>",
+					"    ",
+					"    <!--content to process before rendering-->",
+					"    <script type=\"text/javascript\">",
+					"        pm.getData(function(error, data) {",
+					"            let json_strings = []; let i; let info_array = data.response.info;",
+					"            var notes=\"<div id='notes'>\";",
+					"            for(i=0; i<info_array.length; i++){",
+					"                notes+=getContent(info_array[i].note);",
+					"                if(info_array[i].json_content){",
+					"                    notes+=\"<pre style='padding-left:20px'><code class='json'>\"+JSON.stringify(info_array[i].json_content, null, 2)+\"</code></pre>\";",
+					"                }",
+					"                if(info_array[i].pic)",
+					"                    notes+=\"<img src='\"+info_array[i].pic+\"' alt='postman steps'/>\";",
+					"            }",
+					"            notes+=\"</div>\"",
+					"            document.getElementById(\"notes\").innerHTML=notes;",
+					"            document.getElementById(\"next\").innerHTML=getContent(data.response.next);",
+					"            hljs.initHighlighting();",
+					"        });",
+					"    </script>",
+					"`;",
+					"if(pm.response.headers.get(\"Content-Type\").includes(\"json\")){",
+					"    pm.visualizer.set(template, {",
+					"        response: pm.response.json(),",
+					"        json_info: JSON.stringify(pm.response.json().json_content)",
+					"    });",
+					"}",
+					"else if(pm.response.headers.get(\"Content-Type\").includes(\"html\")){",
+					"    pm.visualizer.set(`{{info}}`, {info:\"Hmm this seems to be HTML and not JSON - to start learning enter `learn-by-api.glitch.me/intro` in the address bar, choose GET method, and click Send!\"});",
+					"}"
+				]
+			}
+		}
+	]
+}
