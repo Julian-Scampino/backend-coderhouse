@@ -19,8 +19,11 @@ const checkAuthentication = (req, res, next) => {
             req.user = user;
             next();
         }
-        if (!user) {
-            next();
+        if (err || !user) {
+            return res.send({error: "error no estas autenticado"});
+            res.end()
+
+
         }
     })(req, res, next);
 };

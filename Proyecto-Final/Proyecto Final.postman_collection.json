@@ -511,7 +511,7 @@
 			]
 		},
 		{
-			"name": "GET HOME si esta loguado redirige a productos sino a LOGIN",
+			"name": "GET home si esta loguado redirige a productos sino a LOGIN",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -633,7 +633,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "https://back-end-coder-scampino.onrender.com/login",
+			"value": "https://back-end-coder-scampino.onrender.com",
 			"type": "string"
 		},
 		{
