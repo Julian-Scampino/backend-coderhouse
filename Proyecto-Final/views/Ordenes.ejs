@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ORDENES</title>
+        <style>
+            body {
+                background-color: #e9ecef;
+            }
+            header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: rgb(255, 85, 85);
+            }
+            header ul {
+                display: flex;
+            }
+            header li {
+                list-style: none;
+                margin-right: 30px;
+            }
+            header a {
+                color: black;
+                font-size: 20px;
+            }
+            table,
+            caption,
+            tr,
+            th,
+            td {
+                border: 1px solid #000000;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav></nav>
+        </header>
+        <h1>Gracias por comprar</h1>
+        <h2>Ordenes de Compra</h2>
+        <% if(productos.length > 0) { %>
+        <table>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Precio</th>
+            <% productos.forEach(element =>{ %>
+            <tr>
+                <td><%= element._id %></td>
+                <td><%= element.titulo %></td>
+                <td><%= element.precio %></td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } else{ %>
+        <h3>No hay productos</h3>
+        <% }%>
+        <h2>Informacion del usuario</h2>
+        <% if(usuario) { %>
+        <table>
+            <tr>
+                <td>Nombre <%= usuario.nombre %></td>
+            </tr>
+            <tr>
+                <td>Email <%= usuario.email %></td>
+            </tr>
+        </table>
+        <% } else{ %>
+        <h3>No hay usuario</h3>
+        <% }%>
+    </body>
+</html>
