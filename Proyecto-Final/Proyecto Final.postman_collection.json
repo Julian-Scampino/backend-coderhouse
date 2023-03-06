@@ -1,0 +1,645 @@
+{
+	"info": {
+		"_postman_id": "5996f42d-2893-4851-817f-c07b6390261b",
+		"name": "Proyecto Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23334532"
+	},
+	"item": [
+		{
+			"name": "Registrar Y LOGIN",
+			"item": [
+				{
+					"name": "Post Registrar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hhh\",\r\n    \"password\": \"hhh\",\r\n    \"email\": \"hhh@hhh\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hhh@hhh\",\r\n    \"password\": \"hhh\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LOGIN",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Traer todos los productos de productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer producto por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/640549b20cc1634648874381",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"640549b20cc1634648874381"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar productos por categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/categorias/comida",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"categorias",
+								"comida"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insertar producto a productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"probando5\",\r\n  \"precio\": 123,\r\n  \"categoria\": \"comida\",\r\n  \"url\": \"asd\",\r\n  \"description\": \"SDadsASD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"probandoUNO\",\r\n  \"precio\": 123,\r\n  \"categoria\": \"comida\",\r\n  \"url\": \"asd\",\r\n  \"description\": \"SDadsASD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/640549b20cc1634648874381",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"640549b20cc1634648874381"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar producto ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/64054a120cc1634648874392",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"64054a120cc1634648874392"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrito",
+			"item": [
+				{
+					"name": "POST: '/' - Crea un carrito y devuelve su id.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carritos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get todos los carritos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carritos/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carritos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carritos/64054d29491e75cd477faa6e/productos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carritos",
+								"64054d29491e75cd477faa6e",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE: '/:id' - Vacía un carrito y lo elimina.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carritos/64054d29491e75cd477faa6e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carritos",
+								"64054d29491e75cd477faa6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST: '/:id/productos/:idPrd' - Para incorporar productos al carrito por su id de producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carritos/64055368a2afb07d34b88dfe/productos/640549b20cc1634648874384",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carritos",
+								"64055368a2afb07d34b88dfe",
+								"productos",
+								"640549b20cc1634648874384"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carritos/64054d29491e75cd477faa6e/productos/64054a0c0cc163464887438a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carritos",
+								"64054d29491e75cd477faa6e",
+								"productos",
+								"64054a0c0cc163464887438a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "GET filtrar mensajes por email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/chat/asdf@asdfasdf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"chat",
+								"asdf@asdfasdf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET HOME si esta loguado redirige a productos sino a LOGIN",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/home",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Info configuración del servidor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenes genera y compra QUERY PARAMS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/ordenes?email=julianscampino@hotmail.com",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"ordenes"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "julianscampino@hotmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://back-end-coder-scampino.onrender.com/login",
+			"type": "string"
+		},
+		{
+			"key": "bearerToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
