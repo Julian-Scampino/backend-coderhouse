@@ -2,6 +2,8 @@
 
 Este es el Proyecto Final para Coder House para el curso de Back-End. Alumno: Julián Scampino.  
 
+Es sobre un e-commerce o tienda virtual. La base de datos está hecha con MongoDb para los productos y para el registro de usuarios, y algunas rutas son privadas. Tiene un chat general hecho con websockets.  
+
 Para usarlo se necesita:  
 1 - El archivo .env con variables de entorno (que NO está incluido en el repositorio)  
 
